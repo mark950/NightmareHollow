@@ -1,0 +1,93 @@
+TextureAtlasDemo Testing Guide
+
+================================================================================
+HOW TO TEST THE TEXTURE ATLAS DEMO SCRIPT
+================================================================================
+
+STEP 1: OPEN THE PROJECT
+1. Open Unity Editor with your NightmareHollow project
+2. Make sure the project is in a usable state
+
+STEP 2: CREATE A TEST OBJECT
+1. In the Hierarchy window, right-click → 3D Object → Cube
+2. Name the Cube object: "AtlasTestCube"
+3. (Optional) Move it to a visible position, e.g., X: 0, Y: 0, Z: 5
+
+STEP 3: ADD THE TEXTUREATLASDEMO COMPONENT
+1. Select the "AtlasTestCube" in the Hierarchy
+2. Click "Add Component" in the Inspector
+3. Search for "TextureAtlasDemo"
+4. Click the result to add the component
+
+STEP 4: CONFIGURE THE COMPONENT
+In the TextureAtlasDemo component inspector:
+
+A. Hallowen Atlas (auto-detect or manual):
+   - If you placed NightmareHollow_TextureAtlas.png in a Resources folder,
+     it will auto-detect
+   - Or drag the texture from the Project window into this field
+   - The texture should be: Assets/NightmareHollow_TextureAtlas.png
+
+B. Tile Selection:
+   - Column: Which column from the atlas grid (0, 1, 2, etc.)
+   - Row: Which row from the atlas grid (0, 1, 2, etc.)
+   - Tile Size: Default 128 (matches the project's texture size convention)
+
+C. Buttons/Options:
+   - "Apply Atlas Texture": Click this to apply the selected sub-texture
+   - The cube's material will change to show the selected atlas portion
+
+STEP 5: TEST DIFFERENT TILES
+1. Start with Column: 0, Row: 0 (top-left corner of the atlas)
+2. Click "Apply Atlas Texture"
+3. Try different values:
+   - Column: 0, Row: 1 (one row down)
+   - Column: 1, Row: 0 (one column right)
+   - Column: 5, Row: 3 (middle area)
+   - Column: 10, Row: 10 (far area)
+4. Each click changes the cube's texture to the corresponding atlas tile
+
+STEP 6: EXPLORE THE ATLAS
+1. Try to find interesting tiles:
+   - Tiles with orange/black colors (likely pumpkin/Halloween themes)
+   - Tiles with skin tones (likely character textures)
+   - Tiles with pattern/grid designs (likely UI or decorative elements)
+2. Note the Column/Row combinations that give good results
+3. These positions can be used in your actual game objects
+
+STEP 7: INTEGRATE INTO YOUR GAME
+1. Once you find good tile positions, apply them to your actual game objects:
+   - Jacko character: Use the JackoTextureAtlasAdapter script
+   - Player: Use TextureAtlasDemo on player objects
+   - UI elements: Apply to canvas objects
+   - Environment: Apply to walls, floors, props
+
+================================================================================
+TROUBLESHOOTING
+================================================================================
+
+IF "Halloween Atlas" is NULL:
+- Ensure NightmareHollow_TextureAtlas.png is in the Assets folder
+- Or place it in a Resources/ subfolder within Assets
+- Or manually drag it from the Project window into the component field
+
+IF the cube appears white/missing:
+- Try different Column/Row values
+- The atlas might have different tile dimensions than 128x128
+- Try adjusting "Tile Size" in the component
+
+IF no texture appears at all:
+- Check that the texture atlas PNG is valid and not corrupted
+- Ensure it's a readable texture format (RGB, RGBA, etc.)
+- Check Unity's Import Settings for the texture
+
+================================================================================
+EXPECTED RESULT
+================================================================================
+After applying a tile, the cube should display the sub-texture from that
+position in the Halloween texture atlas. Different tiles should show
+different parts of the atlas - some may be solid colors, patterns,
+character textures, or Halloween-themed graphics.
+
+The atlas likely contains multiple textures arranged in a grid, designed
+for the Nightmare Hollow Halloween game theme.

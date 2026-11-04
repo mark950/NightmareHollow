@@ -1,0 +1,6 @@
+[2026-11-03T14:33:49.568Z][INFO] Command-line: 'C:\\Program Files\\Unity\\Hub\\Editor\\6000.6.7f1\\Editor\\Data\\Resources\\PackageManager\\Server\\UnityPackageManager.exe' server -s 30316 --ipc-path Unity-Upm-30316 -l 2 --log-file C:\\Users\\ork20\\Documents\\NightmareHollow/Logs/upm.log
+[2026-11-03T14:33:49.570Z][INFO] Detected environment variables:
+  NO_PROXY=127.0.0.1,localhost,::1
+[2026-11-03T14:33:49.605Z][INFO] IPC server started (IPC path=Unity-Upm-30316).
+[2026-11-03T14:33:49.605Z][INFO] Hint: To connect to this UPM instance, launch Unity with the command-line parameter -upmIpcPath Upm-30316.
+[2026-11-03T14:33:50.621Z][INFO] Shutting down UnityPackageManager.exe: parent process [30316] is no longer running.
